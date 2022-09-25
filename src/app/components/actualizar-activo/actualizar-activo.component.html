@@ -1,0 +1,36 @@
+<div class="centrado">
+    <h4>Actualizar activo</h4>
+
+</div>
+<div class="alert alert-danger" style=" justify-content: center; align-items: center;" role="alert" *ngIf="numeroNegativo()">
+    No se aceptan números menores o iguales a cero
+</div>
+<form [formGroup]="checkoutform" (ngSubmit)="actualizarActivo(checkoutform.value)">
+    <div class="centrado">
+        <div class="mi-grid">
+            <input type="number" class="form-control tamano" [ngClass]="{'incorrecto': menorACero(checkoutform.value.serial), 'correcto': !menorACero(checkoutform.value.serial)}" placeholder="Serial" aria-label="Serial" aria-describedby="button-addon2" formControlName="serial">
+            <input type="text" class="form-control tamano correcto" placeholder="Nombre" aria-label="Nombre" aria-describedby="button-addon2" formControlName="nombre">
+            <input type="text" class="form-control tamano correcto" placeholder="Descripcion" aria-label="Descripcion" aria-describedby="button-addon2" formControlName="descripcion">
+            <input type="text" class="form-control tamano correcto" placeholder="Tipo" aria-label="Tipo" aria-describedby="button-addon2" formControlName="tipo" maxlength="1">
+            <input type="number" class="form-control tamano" [ngClass]="{'incorrecto': menorACero(checkoutform.value.numIntInv), 'correcto': !menorACero(checkoutform.value.numIntInv)}" placeholder="Numero interno Inventario" aria-label="Numero interno Inventario"
+                aria-describedby="button-addon2" formControlName="numIntInv">
+            <input type="number" class="form-control tamano" [ngClass]="{'incorrecto': menorACero(checkoutform.value.peso), 'correcto': !menorACero(checkoutform.value.peso)}" placeholder="Peso" aria-label="Peso" aria-describedby="button-addon2" formControlName="peso">
+
+            <input type="number" class="form-control tamano" [ngClass]="{'incorrecto': menorACero(checkoutform.value.alto), 'correcto': !menorACero(checkoutform.value.alto)}" placeholder="Alto" aria-label="Alto" aria-describedby="button-addon2" formControlName="alto">
+
+            <input type="number" class="form-control tamano" [ngClass]="{'incorrecto': menorACero(checkoutform.value.ancho), 'correcto': !menorACero(checkoutform.value.ancho)}" placeholder="Ancho" aria-label="Ancho" aria-describedby="button-addon2" formControlName="ancho">
+
+            <input type="number" class="form-control tamano correcto" [ngClass]="{'incorrecto': menorACero(checkoutform.value.valorCompra), 'correcto': !menorACero(checkoutform.value.valorCompra)}" placeholder="Valor compra" aria-label="Valor compra" aria-describedby="button-addon2"
+                formControlName="valorCompra">
+            <input type="date" class="form-control tamano correcto" aria-label="fecha compra" aria-describedby="button-addon2" formControlName="fechaCompra">
+
+        </div>
+    </div>
+
+    <div class="centrado" style="margin-top: 1%;">
+        <button type="submit" class="btn btn-success" *ngIf="!sendingRequest" [disabled]="numeroNegativo()">Actualizar activo</button>
+        <div class="spinner-border" role="status" *ngIf="sendingRequest">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,30 @@
+.espacio {
+    padding-top: 1%;
+}
+
+.opciones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input:focus {
+    box-shadow: 10px 5px 30px rgba(23, 23, 23, 0.376);
+}
+
+.incorrecto {
+    border-color: red;
+    box-shadow: 1px 1px 1px rgba(220, 60, 60, 0.662);
+    background-color: rgba(255, 19, 19, 0.207);
+}
+
+.correcto {
+    border-color: rgba(3, 5, 8, 0.529);
+}

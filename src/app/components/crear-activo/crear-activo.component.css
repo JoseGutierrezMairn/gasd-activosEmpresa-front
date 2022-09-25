@@ -1,0 +1,43 @@
+.mi-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-left: 6%;
+    margin-right: 2%;
+    padding-top: 2%;
+}
+
+.tamano {
+    width: 30%;
+}
+
+.centrado {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 2%;
+}
+
+input:focus {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+.incorrecto {
+    border-color: red;
+    box-shadow: 0px 0px 0px rgba(220, 60, 60, 0.662);
+    width: 30%;
+    background-color: rgba(255, 19, 19, 0.207);
+}
+
+.correcto {
+    border-color: rgb(92, 148, 221);
+    width: 30%;
+}

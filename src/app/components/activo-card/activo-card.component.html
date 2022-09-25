@@ -1,0 +1,21 @@
+<div class="card text-bg-success mb-3" style="max-width: 18rem;">
+    <div class="card-header">{{activoInfo.nombre}}</div>
+    <div class="card-body">
+        <ul>
+            <li>
+                Serial: {{activoInfo.serial}}
+            </li>
+            <li>
+                Tipo: {{activoInfo.tipo}}
+            </li>
+            <li>
+                Fecha Compra: {{activoInfo.fechaCompra | date:'dd/MM/YYYY'}}
+            </li>
+
+        </ul>
+        <div style="display: flex; justify-content: center;">
+            <button type="button" class="btn btn-light" (click)="verInfoCompleta()">Ver más</button>
+        </div>
+
+    </div>
+</div>

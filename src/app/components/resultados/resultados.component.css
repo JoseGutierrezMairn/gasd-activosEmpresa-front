@@ -1,0 +1,29 @@
+.centrado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 2%;
+}
+
+.mi-contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 2%;
+}
+
+hr {
+    border: none;
+    height: 1.5px;
+    background-color: rgb(0, 0, 0);
+}

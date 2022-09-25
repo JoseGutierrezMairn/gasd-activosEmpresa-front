@@ -1,0 +1,29 @@
+.my-conten {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    width: 100%;
+    height: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: rgb(212, 212, 212);
+}
+
+.conten {
+    width: auto;
+    height: 100%;
+    padding-bottom: 10%;
+    box-shadow: 2px 1px 15px rgb(0, 0, 0);
+    padding-top: 5px;
+    background-color: white;
+}
+
+.imagen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 23%;
+}

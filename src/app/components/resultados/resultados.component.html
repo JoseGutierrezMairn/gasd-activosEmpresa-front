@@ -1,0 +1,17 @@
+<div class="centrado">
+    <h4 *ngIf="queryType === 'fecha'">Activos por {{queryType}}: {{query | date: 'dd/MM/YYYY'}}</h4>
+    <h4 *ngIf="queryType !== 'fecha'">Activos por {{queryType}}: {{query}}</h4>
+    <div class="spinner-border" role="status" *ngIf="sendingRequest">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<hr>
+<div class="mi-contenedor">
+
+    <app-activo-card [activoInfo]="activo" *ngFor="let activo of activos"></app-activo-card>
+
+</div>
+
+<div class="centrado">
+    <button type="button" class="btn btn-danger" (click)="regresar()">Regresar</button>
+</div>

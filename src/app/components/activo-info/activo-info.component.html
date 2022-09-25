@@ -1,0 +1,43 @@
+<div class="centrado">
+    <h4 style="padding-bottom: 10px;">Información activo</h4>
+    <div class="card text-bg-success mb-3" style="max-width: 18rem;">
+        <div class="card-header">{{activoInfo.nombre}}</div>
+        <div class="card-body">
+            <ul>
+                <li>
+                    Serial: {{activoInfo.serial}}
+                </li>
+                <li>
+                    Tipo: {{activoInfo.tipo}}
+                </li>
+                <li>
+                    Fecha Compra: {{activoInfo.fechaCompra | date:'dd/MM/YYYY'}}
+                </li>
+                <li>
+                    Num interno inventario: {{activoInfo.numIntInv}}
+                </li>
+                <li>
+                    Peso: {{activoInfo.peso}}
+                </li>
+                <li>
+                    Alto: {{activoInfo.alto}}
+                </li>
+                <li>
+                    Ancho: {{activoInfo.ancho}}
+                </li>
+                <li>
+                    Valor Compra: {{activoInfo.valorCompra | currency:'COP'}}
+                </li>
+                <li>
+                    <div style="display: flex; flex-direction: column; justify-content: left;">
+                        Descripcion:
+                        <label for="" style="overflow-y: scroll; max-height: 50%; padding-left: 2px;">{{activoInfo.descripcion}}</label>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <button type="button" class="btn btn-danger" (click)="regresar()">Regresar</button>
+</div>
