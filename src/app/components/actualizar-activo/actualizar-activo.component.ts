@@ -29,18 +29,32 @@ export class ActualizarActivoComponent implements OnInit {
       alto: null,
       ancho: null,
       valorCompra: null,
-      fechaCompra: null
+      fechaCompra: null,
+      idPersona: null,
+      idArea: null
     })
   }
 
   ngOnInit(): void {
     this.sendingRequest = false;
+    
   }
 
 
+  checkDisabled(){
+    
+    if( this.checkoutform.value.idPersona != null ){ this.checkoutform.controls['idArea'].disable(); }
+    else if( this.checkoutform.value.idArea != null ){ this.checkoutform.controls['idPersona'].disable(); }
+    else{
+      this.checkoutform.controls['idPersona'].enable();
+      this.checkoutform.controls['idArea'].enable();
+    }
+    return false;
+  }
+
   camposObligatorios(data: any): boolean{
     return data.serial != null && ( data.nombre != '' || data.descripcion != '' || data.tipo != '' || data.numIntInv != null ||
-    data.peso != null || data.alto != null || data.ancho != null || data.valorCompra != null ||
+    data.peso != null || data.alto != null || data.ancho != null || data.valorCompra != null || data.idArea != null || data.idPersona != null ||
     (data.fechaCompra != null && data.fechaCompra != '') );
   }
 
@@ -50,9 +64,8 @@ export class ActualizarActivoComponent implements OnInit {
 
   numeroNegativo(): boolean{
     this.items = this.checkoutform.value;
-    return this.menorACero(this.items.serial) || this.menorACero(this.items.numIntInv)|| this.menorACero(this.items.peso) || this.menorACero(this.items.alto) || this.menorACero( this.items.ancho ) || this.menorACero(this.items.valorCompra);
+    return this.menorACero(this.items.serial) || this.menorACero(this.items.numIntInv)|| this.menorACero(this.items.peso) || this.menorACero(this.items.alto) || this.menorACero( this.items.ancho ) || this.menorACero(this.items.valorCompra) || this.menorACero(this.items.idPersona) || this.menorACero(this.items.idArea);
   }
-
   actualizarActivo(data :any): void{
     if( this.camposObligatorios(data) ){
 
@@ -67,6 +80,9 @@ export class ActualizarActivoComponent implements OnInit {
         ancho: data.ancho,
         valorCompra: data.valorCompra,
         fechaCompra: data.fechaCompra != '' && data.fechaCompra != null ? data.fechaCompra : null,
+        idPersona: data.idPersona,
+        idArea: data.idArea,
+        serialActivo: data.serial
       }).subscribe(response => {
         this.alertsService.showSuccess('El activo ha sido actualizado satisfactoriamente');
       }, error =>{

@@ -28,6 +28,12 @@
                 <li>
                     Valor Compra: {{activoInfo.valorCompra | currency:'COP'}}
                 </li>
+                <li *ngIf="activoInfo.idPersona != null">
+                    Id persona asignada: {{activoInfo.idPersona}}
+                </li>
+                <li *ngIf="activoInfo.idArea != null">
+                    Id area asignada: {{activoInfo.idArea}}
+                </li>
                 <li>
                     <div style="display: flex; flex-direction: column; justify-content: left;">
                         Descripcion:

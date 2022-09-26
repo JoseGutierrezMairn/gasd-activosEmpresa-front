@@ -2,11 +2,12 @@
     <h4>Actualizar activo</h4>
 
 </div>
-<div class="alert alert-danger" style=" justify-content: center; align-items: center;" role="alert" *ngIf="numeroNegativo()">
-    No se aceptan números menores o iguales a cero
-</div>
+
 <form [formGroup]="checkoutform" (ngSubmit)="actualizarActivo(checkoutform.value)">
     <div class="centrado">
+        <div class="alert alert-danger" style=" justify-content: center; align-items: center;" role="alert" *ngIf="numeroNegativo()">
+            No se aceptan números menores o iguales a cero
+        </div>
         <div class="mi-grid">
             <input type="number" class="form-control tamano" [ngClass]="{'incorrecto': menorACero(checkoutform.value.serial), 'correcto': !menorACero(checkoutform.value.serial)}" placeholder="Serial" aria-label="Serial" aria-describedby="button-addon2" formControlName="serial">
             <input type="text" class="form-control tamano correcto" placeholder="Nombre" aria-label="Nombre" aria-describedby="button-addon2" formControlName="nombre">
@@ -23,6 +24,12 @@
             <input type="number" class="form-control tamano correcto" [ngClass]="{'incorrecto': menorACero(checkoutform.value.valorCompra), 'correcto': !menorACero(checkoutform.value.valorCompra)}" placeholder="Valor compra" aria-label="Valor compra" aria-describedby="button-addon2"
                 formControlName="valorCompra">
             <input type="date" class="form-control tamano correcto" aria-label="fecha compra" aria-describedby="button-addon2" formControlName="fechaCompra">
+
+            <input type="number" class="form-control tamano correcto" [ngClass]="{'incorrecto': menorACero(checkoutform.value.idPersona), 'correcto': !menorACero(checkoutform.value.idPersona)}" placeholder="Id Persona" aria-label="IdPersona" aria-describedby="button-addon2"
+                formControlName="idPersona">
+
+            <input [disabled]="checkDisabled()" type="number" class="form-control tamano correcto" [ngClass]="{'incorrecto': menorACero(checkoutform.value.idArea), 'correcto': !menorACero(checkoutform.value.idArea)}" placeholder="Id Area" aria-label="IdArea" aria-describedby="button-addon2"
+                formControlName="idArea">
 
         </div>
     </div>
