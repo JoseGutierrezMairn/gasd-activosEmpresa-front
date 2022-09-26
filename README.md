@@ -1,27 +1,38 @@
-# ActivosGasd
+# Activos de una empresa
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+Prueba activos de una empresa - front end
 
-## Development server
+### Prerrequisitos
+Debemos tener los siguientes programas instalados:
+~~~
+* Node js
+* Angular CI
+~~~
+# Instalando 
+Para descargar el proyecto realizaremos los siguientes pasos desde el **Simbolo del sistema** o **Command prompt**:  
+1. Nos dirigimos a la ubicación donde queremos descargar el proyecto desde el simbolo del sistema.  
+2. Escribimos el siguiente comando para realizar la descarga:  
+`git clone https://github.com/JoseGutierrezMairn/gasd-activosEmpresa-front`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Probando
+Para probar el proyecto debemos abrir una linea de comandos en la carpeta raíz del proyecto y correr los siguientes comandos:
 
-## Code scaffolding
+~~~
+npm install
+npm run install
+~~~
+De esta manera la aplicación se compilará y abrirá en una nueva pestaña del navegador configurado como predeterminado:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+![Pruebas desde maven](https://github.com/JoseGutierrezMairn/gasd-activosEmpresa-front/blob/master/img/app.png?raw=true) 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+# Desarrollo  
+Construido con:
+* [Angular](https://maven.apache.org/)
+* [Bootstrap](https://getbootstrap.com/)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Autor
+* [Jose Gutierrez](https://github.com/JoseGutierrezMairn)
